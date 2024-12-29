@@ -41,4 +41,4 @@ class UserProfileSerializer(serializers.ModelSerializer):
 class UserUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['profile_image','nickname','gender','introduce']  # 수정 가능한 필드from rest_framework import serializers
+        fields = ['profile_image','nickname','gender','introduce']  

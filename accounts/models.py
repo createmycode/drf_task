@@ -19,7 +19,7 @@ class CustomUserManager(BaseUserManager):
 
 class User(AbstractUser):
     email = models.EmailField('이메일', unique=True)
-    username = models.CharField('닉네임', max_length=150, unique=True) 
+    username = models.CharField('username', max_length=150, unique=True) 
     profile_image = models.ImageField('프로필 이미지', upload_to='profile_images/', blank=True, null=True)
     first_name = models.CharField("first_name", max_length=50)
     last_name = models.CharField("last_name", max_length=50)
@@ -28,8 +28,8 @@ class User(AbstractUser):
     gender = models.CharField(verbose_name='성별', max_length=5, null=True, blank=True)
     introduce = models.CharField('자기소개', max_length=150, null=True, blank=True)
     
-    USERNAME_FIELD = 'email'    # 로그인 시 이메일 사용
-    REQUIRED_FIELDS = []        # email은 자동으로 필수
+    USERNAME_FIELD = 'username'    # 로그인 시 username 사용
+    REQUIRED_FIELDS = []        # username은 자동으로 필수
 
     objects = CustomUserManager()
 
